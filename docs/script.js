@@ -7,3 +7,5 @@ function previous() {}
 function next() {}
 
 function zoomOut() {}
+
+function zoomIn() {}
