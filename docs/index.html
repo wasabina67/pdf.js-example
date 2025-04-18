@@ -18,16 +18,16 @@
       </div>
       <div class="viewer">
         <div class="toolbar">
-          <a href="#" onclick="">Previous</a>
+          <a href="#" onclick="previous()">Previous</a>
           <span class="ml-20">
             <span id="page-num">1</span> / <span id="page-count">9,999</span>
           </span>
-          <a href="#" onclick="" class="ml-20">Next</a>
-          <a href="#" onclick="" class="ml-40">Zoom Out</a>
+          <a href="#" onclick="next()" class="ml-20">Next</a>
+          <a href="#" onclick="zoomOut()" class="ml-40">Zoom Out</a>
           <span class="ml-20">
             <span id="zoom-level">100</span><span> %</span>
           </span>
-          <a href="#" onclick="" class="ml-20">Zoom In</a>
+          <a href="#" onclick="zoomIn()" class="ml-20">Zoom In</a>
         </div>
         <canvas id="canvas-pdf"></canvas>
       </div>
