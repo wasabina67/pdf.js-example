@@ -41,6 +41,10 @@ h3 {
     border-bottom: 1px solid #ccc;
 }
 
+.ml-20 {
+    margin-left: 20px;
+}
+
 #canvas-pdf {
     border: 1px solid #ccc;
     margin-top: 50px;
