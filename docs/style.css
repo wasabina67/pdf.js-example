@@ -20,8 +20,24 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #eaeaea;
+    position: relative;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    position: absolute;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
 }
 
 #canvas-pdf {
     border: 1px solid #ccc;
+    margin-top: 50px;
 }
