@@ -17,3 +17,7 @@
     align-items: center;
     background-color: #eaeaea;
 }
+
+#canvas-pdf {
+    border: 1px solid #ccc;
+}
