@@ -1,4 +1,6 @@
 let pdfDocument = null;
+let pageNumber = 1;
+let scale = 1.5;
 
 function loadPDF(path) {
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-5.1.91-dist/build/pdf.worker.mjs';
@@ -15,8 +17,25 @@ function loadPDF(path) {
     useWorkerFetch: true
   }).promise.then((pdf) => {
     pdfDocument = pdf;
+    renderPage(pageNumber, canvas, ctx);
   }).catch((err) => {
     console.error(err);
+  });
+}
+
+function renderPage(num, canvas, ctx) {
+  pdfDocument.getPage(num).then((page) => {
+    const viewport = page.getViewport({ scale });
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+
+    const renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+    };
+    page.render(renderContext);
+
+    // Update display
   });
 }
 
