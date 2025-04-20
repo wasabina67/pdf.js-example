@@ -17,6 +17,7 @@ function loadPDF(path) {
     useWorkerFetch: true
   }).promise.then((pdf) => {
     pdfDocument = pdf;
+    pageNumber = 1;
     renderPage();
   }).catch((err) => {
     console.error('Error loading PDF:', err);
