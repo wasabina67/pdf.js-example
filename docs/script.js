@@ -38,7 +38,7 @@ function renderPage(num, canvas, ctx) {
     };
     page.render(renderContext);
 
-    document.getElementById('page-num').textContent = num;
+    document.getElementById('page-num').textContent = num.toLocaleString();
     document.getElementById('page-count').textContent = pdfDocument.numPages.toLocaleString();
   });
 }
@@ -63,4 +63,9 @@ function next() {
 
 function zoomOut() {}
 
-function zoomIn() {}
+function zoomIn() {
+  scale += 0.5;
+  const canvas = document.getElementById('canvas-pdf');
+  const ctx = canvas.getContext('2d');
+  renderPage(pageNumber, canvas, ctx);
+}
