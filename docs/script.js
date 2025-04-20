@@ -39,7 +39,7 @@ function renderPage(num, canvas, ctx) {
     page.render(renderContext);
 
     document.getElementById('page-num').textContent = num;
-    document.getElementById('page-count').textContent = pdfDocument.numPages;
+    document.getElementById('page-count').textContent = pdfDocument.numPages.toLocaleString();
   });
 }
 
