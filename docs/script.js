@@ -17,8 +17,6 @@ function loadPDF(path) {
     useWorkerFetch: true
   }).promise.then((pdf) => {
     pdfDocument = pdf;
-    const canvas = document.getElementById('canvas-pdf');
-    const ctx = canvas.getContext('2d');
     renderPage();
   }).catch((err) => {
     console.error('Error loading PDF:', err);
@@ -49,8 +47,6 @@ function renderPage() {
 function previous() {
   if (pageNumber > 1) {
     pageNumber--;
-    const canvas = document.getElementById('canvas-pdf');
-    const ctx = canvas.getContext('2d');
     renderPage();
   }
 }
@@ -58,8 +54,6 @@ function previous() {
 function next() {
   if (pageNumber < pdfDocument.numPages) {
     pageNumber++;
-    const canvas = document.getElementById('canvas-pdf');
-    const ctx = canvas.getContext('2d');
     renderPage();
   }
 }
@@ -67,16 +61,12 @@ function next() {
 function zoomOut() {
   if (scale > 0.5) {
     scale -= 0.25;
-    const canvas = document.getElementById('canvas-pdf');
-    const ctx = canvas.getContext('2d');
     renderPage();
   }
 }
 
 function zoomIn() {
   scale += 0.25;
-  const canvas = document.getElementById('canvas-pdf');
-  const ctx = canvas.getContext('2d');
   renderPage();
 }
 
