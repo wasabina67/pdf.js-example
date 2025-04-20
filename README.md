@@ -7,15 +7,13 @@ pdf.js example
 npm i && node server.js
 ```
 
-http://localhost:3000/
-
-http://localhost:3000/pdfjs-5.1.91-dist/web/viewer.html
+- http://localhost:3000/
+- http://localhost:3000/pdfjs-5.1.91-dist/web/viewer.html
 
 ## GitHub Pages
 
-https://wasabina67.github.io/pdf.js-example/
-
-https://wasabina67.github.io/pdf.js-example/pdfjs-5.1.91-dist/web/viewer.html
+- https://wasabina67.github.io/pdf.js-example/
+- https://wasabina67.github.io/pdf.js-example/pdfjs-5.1.91-dist/web/viewer.html
 
 ## Resources
 - [青空文庫](https://www.aozora.gr.jp/index.html)
