@@ -4,7 +4,10 @@ let scale = 1.5;
 
 function loadPDF(path) {
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-5.1.91-dist/build/pdf.worker.mjs';
-  pdfjsLib.GlobalWorkerOptions.cMapUrl = 'http://localhost:3000/pdfjs-5.1.91-dist/web/cmaps/';
+  pdfjsLib.GlobalWorkerOptions.cMapUrl =
+    window.location.hostname === 'localhost'
+      ? 'http://localhost:3000/pdfjs-5.1.91-dist/web/cmaps/'
+      : 'https://wasabina67.github.io/pdf.js-example/pdfjs-5.1.91-dist/web/cmaps/';
   pdfjsLib.GlobalWorkerOptions.cMapPacked = true;
 
   const canvas = document.getElementById('canvas-pdf');
