@@ -63,7 +63,7 @@ function next() {
 
 function zoomOut() {
   if (scale > 0.5) {
-    scale -= 0.5;
+    scale -= 0.25;
     const canvas = document.getElementById('canvas-pdf');
     const ctx = canvas.getContext('2d');
     renderPage(pageNumber, canvas, ctx);
@@ -71,7 +71,7 @@ function zoomOut() {
 }
 
 function zoomIn() {
-  scale += 0.5;
+  scale += 0.25;
   const canvas = document.getElementById('canvas-pdf');
   const ctx = canvas.getContext('2d');
   renderPage(pageNumber, canvas, ctx);
