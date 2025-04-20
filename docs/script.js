@@ -76,3 +76,8 @@ function zoomIn() {
   const ctx = canvas.getContext('2d');
   renderPage(pageNumber, canvas, ctx);
 }
+
+window.addEventListener('load', () => {
+  const path = 'pdfs/gakumonno_susume.pdf';
+  loadPDF(path);
+});
