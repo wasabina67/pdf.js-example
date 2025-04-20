@@ -43,9 +43,23 @@ function renderPage(num, canvas, ctx) {
   });
 }
 
-function previous() {}
+function previous() {
+  if (pageNumber > 1) {
+    pageNumber--;
+    const canvas = document.getElementById('canvas-pdf');
+    const ctx = canvas.getContext('2d');
+    renderPage(pageNumber, canvas, ctx);
+  }
+}
 
-function next() {}
+function next() {
+  if (pageNumber < pdfDocument.numPages) {
+    pageNumber++;
+    const canvas = document.getElementById('canvas-pdf');
+    const ctx = canvas.getContext('2d');
+    renderPage(pageNumber, canvas, ctx);
+  }
+}
 
 function zoomOut() {}
 
