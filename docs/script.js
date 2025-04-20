@@ -22,7 +22,7 @@ function loadPDF(path) {
     pdfDocument = pdf;
     renderPage(pageNumber, canvas, ctx);
   }).catch((err) => {
-    console.error(err);
+    console.error('Error loading PDF:', err);
   });
 }
 
