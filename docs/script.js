@@ -40,6 +40,7 @@ function renderPage(num, canvas, ctx) {
 
     document.getElementById('page-num').textContent = num.toLocaleString();
     document.getElementById('page-count').textContent = pdfDocument.numPages.toLocaleString();
+    document.getElementById('zoom-level').textContent = `${Math.round(scale * 100)}`;
   });
 }
 
@@ -61,7 +62,14 @@ function next() {
   }
 }
 
-function zoomOut() {}
+function zoomOut() {
+  if (scale > 0.5) {
+    scale -= 0.5;
+    const canvas = document.getElementById('canvas-pdf');
+    const ctx = canvas.getContext('2d');
+    renderPage(pageNumber, canvas, ctx);
+  }
+}
 
 function zoomIn() {
   scale += 0.5;
