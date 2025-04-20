@@ -10,9 +10,6 @@ function loadPDF(path) {
       : 'https://wasabina67.github.io/pdf.js-example/pdfjs-5.1.91-dist/web/cmaps/';
   pdfjsLib.GlobalWorkerOptions.cMapPacked = true;
 
-  const canvas = document.getElementById('canvas-pdf');
-  const ctx = canvas.getContext('2d');
-
   pdfjsLib.getDocument({
     url: path,
     cMapUrl: pdfjsLib.GlobalWorkerOptions.cMapUrl,
@@ -20,6 +17,8 @@ function loadPDF(path) {
     useWorkerFetch: true
   }).promise.then((pdf) => {
     pdfDocument = pdf;
+    const canvas = document.getElementById('canvas-pdf');
+    const ctx = canvas.getContext('2d');
     renderPage(pageNumber, canvas, ctx);
   }).catch((err) => {
     console.error('Error loading PDF:', err);
