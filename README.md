@@ -1,9 +1,17 @@
 # pdf.js-example
 pdf.js example
 
+## title
+
+```bash
+npm i && node server.js
+```
+
 http://localhost:3000/
 
 http://localhost:3000/pdfjs-5.1.91-dist/web/viewer.html
+
+## title
 
 https://wasabina67.github.io/pdf.js-example/
 
