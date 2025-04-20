@@ -26,7 +26,7 @@ function loadPDF(path) {
 }
 
 function renderPage(num, canvas, ctx) {
-  pdfDocument.getPage(num).then((page) => {
+  pdfDocument.getPage(pageNumber).then((page) => {
     const viewport = page.getViewport({ scale });
     canvas.width = viewport.width;
     canvas.height = viewport.height;
@@ -37,7 +37,7 @@ function renderPage(num, canvas, ctx) {
     };
     page.render(renderContext);
 
-    document.getElementById('page-num').textContent = num.toLocaleString();
+    document.getElementById('page-num').textContent = pageNumber.toLocaleString();
     document.getElementById('page-count').textContent = pdfDocument.numPages.toLocaleString();
     document.getElementById('zoom-level').textContent = `${Math.round(scale * 100)}`;
   });
