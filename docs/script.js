@@ -38,7 +38,8 @@ function renderPage(num, canvas, ctx) {
     };
     page.render(renderContext);
 
-    // Update display
+    document.getElementById('page-num').textContent = num;
+    document.getElementById('page-count').textContent = pdfDocument.numPages;
   });
 }
 
